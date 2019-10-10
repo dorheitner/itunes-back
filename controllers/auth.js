@@ -1,9 +1,7 @@
 const User = require('../models/user')
 const _ = require('lodash')
 const bcrypt = require('bcryptjs')
-const crypto = require('crypto')
 const nodemailer = require('nodemailer')
-const sendGridTransport = require('nodemailer-sendgrid-transport')
 
 const transporter = nodemailer.createTransport(
   sendGridTransport({
@@ -48,10 +46,6 @@ exports.signUp = async (req, res, next) => {
     }
   } catch (e) {
     console.log(e)
-    // if (!e.statusCode) {
-    //   e.statusCode = 500
-    // }
-    // next(e)
   }
 }
 
