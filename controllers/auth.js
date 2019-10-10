@@ -1,16 +1,6 @@
 const User = require('../models/user')
 const _ = require('lodash')
 const bcrypt = require('bcryptjs')
-const nodemailer = require('nodemailer')
-
-const transporter = nodemailer.createTransport(
-  sendGridTransport({
-    auth: {
-      api_key:
-        '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'
-    }
-  })
-)
 
 const { validationResult } = require('express-validator')
 const jwt = require('jsonwebtoken')
